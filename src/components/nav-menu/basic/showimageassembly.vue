@@ -4,17 +4,21 @@
       <span class="v-small-menu-title">图片组件</span>
     </div>
     <imageassembly v-on:dianji="dianji" Name='ceshi1' :Url='ceshi1' ></imageassembly>
-    <imageassembly v-on:dianji="dianji" Name='ceshi2' :Url='ceshi2' ></imageassembly>
+
 
     <el-dialog title="提示" :visible.sync="dialogVisible" width="500px">
 
       <uploadimageassembly v-if="dialogVisible" :IsMultiSelection="1" :UplodItems.sync="UplodItems" :Name='Name'></uploadimageassembly>
+
       <el-button @click="uploadImage">主界面按钮上传</el-button>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="confirmUploadImage">确 定</el-button>
       </span>
     </el-dialog>
+     <zi1 name='ceshi1'></zi1>
+     <zi1 name='ceshi2' ></zi1>
+     <zi2 :IsMultiSelection="1" v-on:confirmUpload="confirmUpload"></zi2>
 
   </el-card>
 </template>
@@ -22,9 +26,11 @@
 <script>
 import imageassembly from "@/components/nav-menu/basic/imageassembly";
 import uploadimageassembly from "@/components/nav-menu/basic/uploadimageassembly";
+import zi1 from "@/components/nav-menu/basic/zi1";
+import zi2 from "@/components/nav-menu/basic/zi2";
 
 export default {
-  components: { imageassembly, uploadimageassembly },
+  components: { imageassembly, uploadimageassembly,zi1,zi2},
   data() {
     return {
       dialogVisible: false,
@@ -51,6 +57,10 @@ export default {
 
     uploadImage() {
       console.log("UplodItems", this.UplodItems);
+    },
+
+    confirmUpload(data){
+        console.log('主界面',data)
     },
 
     confirmUploadImage(){

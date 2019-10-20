@@ -18,9 +18,8 @@
       :on-success="handleAvatarSuccess"
       multiple
       ref="upload"
-      :on-remove='removeFile'
-      :limit='IsMultiSelection'
-      :name='Name'
+      :on-remove="removeFile"
+      :limit="IsMultiSelection"
     >
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">
@@ -30,7 +29,7 @@
       <!-- <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div> -->
     </el-upload>
 
-    <el-button @click="clickName">检验Name</el-button>
+    <!-- <el-button @click="clickName">检验Name</el-button> -->
 
     <div>
       <img
@@ -38,18 +37,23 @@
         class="icon_style"
         src="../../../../static/image/icon/erweima.jpg"
         alt
-      >
+      />
     </div>
-    <!-- <el-button class="button_style" @click="confirmUpload">确认上传</el-button> -->
+    <el-button class="button_style" @click="confirmUpload">确认上传</el-button>
     <!-- <el-button class="button_style" @click="clearFiles">清除上传</el-button> -->
   </div>
 </template>
-
 <script>
-
+import bus from "@/components/nav-menu/basic/zhongyan";
 export default {
   data() {
     return {
+      ceshishuju:{
+
+      },
+      msg: "",
+      Name:'',
+      UplodItems: [],
       ruleForm: {
         imageUrl: "",
         resource: "local"
@@ -65,111 +69,78 @@ export default {
         }
       ],
 
-      WeiXinItems:[],
-     
-     
+      WeiXinItems: [],
 
+      props: {
+        IsMultiSelection: "",
+        
+       
+      }
     };
   },
 
-  props:{
-    IsMultiSelection:'',
-    UplodItems:'',
-    Name:''
+  created() {
+    var that = this;
+    bus.$on("sends", function(val) {
+        console.log('val',val)
+        that.Name = val
+    });
+
+    
   },
 
   methods: {
-    Success(){
-      
-    },
+ /*    Success() {},
 
-    clickName(){
-      console.log('Name',this.Name)
-    },
+    clickName() {
+      console.log("Name", this.Name);
+    }, */
+
     handleAvatarSuccess(res, file) {
+       var that = this
       // if(this.IsMultiSelection){
       //    this.UplodItems.push(res.Data[0])
       // }else{
       //   this.UplodItems = []
       //   this.UplodItems.push(res.Data[0])
       // }
-      console.log('res',res.Data)
-      for(var key in res.Data){
-        this.UplodItems[key] = res.Data[key]
+      for (var key in res.Data) {
+        that.UplodItems[key] = res.Data[key];
       }
-     
-      // this.UplodItems.push(res.Data[0])
-    
+
+      for(var i = 0;that.UplodItems.length>i;i++){
+       that.UplodItems[i].Name = that.Name
+      }
+
+      console.log('结果',that.UplodItems)
+      /* if(this.Name){
+          for(var i = 0;this.UplodItems.length>0;i++){
+              console.log(this.UplodItems[i])
+             
+          }
+      } */
+        /* this.UplodItems.push(res.Data[0]) */
+
       //   this.ruleForm.imageUrl = URL.createObjectURL(file.raw);
     },
-    clearFiles(){
-      this.$refs['upload'].clearFiles();
-      
+    clearFiles() {
+      this.$refs["upload"].clearFiles();
     },
 
-    confirmUpload(){
-      console.log('xinxi',this.UplodItems)
-     
+    confirmUpload() {
+      console.log('confirmUpload',this.UplodItems)
+      this.$emit('confirmUpload',this.UplodItems)
     },
 
-    removeFile(res){
-      for(var i = 0;this.UplodItems.length>i;i++){
-        if(this.UplodItems[i].ClientFileName == res.name){
+    removeFile(res) {
+      for (var i = 0; this.UplodItems.length > i; i++) {
+        if (this.UplodItems[i].ClientFileName == res.name) {
           this.UplodItems.splice(i, 1);
         }
       }
-      
-
-    },
-
-    // requestFile(res){
-    //   console.log('1111',res)
-    // }
-    
+    }
   }
 };
 </script>
-
-<style scoped>
-.icon_style {
-  height: 200px;
-  width: 200px;
-}
-
-.button_style {
-  margin-top: 25px;
-  margin-left: 30px;
-}
-
-.uploader:hover {
-  border-color: #409eff;
-}
-
-.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 178px;
-  height: 178px;
-  line-height: 178px;
-  text-align: center;
-}
-
-.avatar {
-  width: 178px;
-  height: 178px;
-  display: block;
-}
-
-.uploader {
-  margin-top: 15px;
-  border: 1px dashed #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<style>
 </style>
