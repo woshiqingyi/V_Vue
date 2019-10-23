@@ -13,7 +13,6 @@
     </div>
 
     <el-card class="menu-layout">
-
       <el-menu
         :class="isCollapse?'menuCollapse':'menuExpand'"
         :collapse="isCollapse"
@@ -22,7 +21,6 @@
         router
         style="border:none;"
       >
-      
         <template v-for="menu in Menus">
           <el-submenu v-if="menu.Children" :index="menu.Code" :key="menu.Code">
             <template slot="title">
@@ -37,11 +35,8 @@
             </template>
           </el-submenu>
         </template>
-
       </el-menu>
-
     </el-card>
-
     <div class="per-menu-content">
       <router-view/>
     </div>

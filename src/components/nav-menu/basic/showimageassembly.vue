@@ -18,7 +18,7 @@
     </el-dialog>
      <zi1 name='ceshi1'></zi1>
      <zi1 name='ceshi2' ></zi1>
-     <zi2 :IsMultiSelection="1" v-on:confirmUpload="confirmUpload"></zi2>
+     <zi2 :IsMultiSelection="0" v-on:confirmUpload="confirmUpload"></zi2>
 
   </el-card>
 </template>
