@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 import homepage from '@/components/homepage'
 
-
+import tree from '@/components/nav-menu/basic/tree'
 import mydatapage from '@/components/nav-menu/basic/mydatapage'
 
 import deletedata from '@/components/nav-menu/basic/deletedata'
@@ -32,11 +32,15 @@ export default new Router({
       component: homepage,
       redirect: 'datalist',
       children: [
-        
         {
           path: '/mydatapage',
           name: 'mydatapage',
           component: mydatapage
+        },
+        {
+          path: '/tree',
+          name: 'tree',
+          component: tree
         },
         {
           path: '/deletedata',
