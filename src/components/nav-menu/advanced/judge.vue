@@ -25,6 +25,9 @@ export default {
     judgeObject() {
         var Object1 =  Object.keys(this.Object1)
         var Object2 =  Object.keys(this.Object2)
+        console.log(Object1)
+         console.log(Object2)
+        
         if(Object1.length){
             console.log('Object1')
         }

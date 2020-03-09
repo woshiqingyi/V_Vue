@@ -5,11 +5,10 @@
     </div>
 
 
-    <el-table :data="ShowDataInfoItems" class="table-style">
+      <el-table :data="ShowDataInfoItems" class="table-style">
           <el-table-column label="名字" width="180" prop="name">
             
           </el-table-column>
-         
       </el-table>
 
       <el-pagination

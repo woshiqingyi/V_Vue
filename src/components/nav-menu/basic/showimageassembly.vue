@@ -3,10 +3,10 @@
     <div slot="header" style="text-align:left;display:flex;align-items:center;">
       <span class="v-small-menu-title">图片组件</span>
     </div>
-    <imageassembly v-on:dianji="dianji" Name='ceshi1' :Url='ceshi1' ></imageassembly>
+    <!-- <imageassembly v-on:dianji="dianji" Name='ceshi1' :Url='ceshi1' ></imageassembly> -->
+     <imageassembly Name='ceshi1'  ></imageassembly>
 
-
-    <el-dialog title="提示" :visible.sync="dialogVisible" width="500px">
+    <!-- <el-dialog title="提示" :visible.sync="dialogVisible" width="500px">
 
       <uploadimageassembly v-if="dialogVisible" :IsMultiSelection="1" :UplodItems.sync="UplodItems" :Name='Name'></uploadimageassembly>
 
@@ -15,10 +15,10 @@
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="confirmUploadImage">确 定</el-button>
       </span>
-    </el-dialog>
-     <zi1 name='ceshi1'></zi1>
-     <zi1 name='ceshi2' ></zi1>
-     <zi2 :IsMultiSelection="0" v-on:confirmUpload="confirmUpload"></zi2>
+    </el-dialog> -->
+     <!-- <zi1 name='ceshi1'></zi1>
+     <zi1 name='ceshi2'></zi1>
+     <zi2 :IsMultiSelection="0" v-on:confirmUpload="confirmUpload"></zi2> -->
 
   </el-card>
 </template>
@@ -43,13 +43,13 @@ export default {
   },
 
   methods: {
-    dianji(data) {
-      console.log("data", data);
-      this.Name = data
-      if (data) {
-        this.dialogVisible = true;
-      }
-    },
+    // dianji(data) {
+    //   console.log("data", data);
+    //   this.Name = data
+    //   if (data) {
+    //     this.dialogVisible = true;
+    //   }
+    // },
 
     overSuccess(){
       console.log('overSuccess')

@@ -3,15 +3,13 @@ import Router from 'vue-router'
 
 import homepage from '@/components/homepage'
 
-import datalist from '@/components/nav-menu/basic/data-list'
-import dialog from '@/components/nav-menu/basic/dialog'
-import templateform from '@/components/nav-menu/basic/templateform'
-import formstyle from '@/components/nav-menu/basic/formstyle'
-import datapage from '@/components/nav-menu/basic/datapage'
+
 import mydatapage from '@/components/nav-menu/basic/mydatapage'
-import date from '@/components/nav-menu/basic/date'
+
 import deletedata from '@/components/nav-menu/basic/deletedata'
 import showimageassembly from '@/components/nav-menu/basic/showimageassembly'
+import showimageassembly2 from '@/components/nav-menu/basic/showimageassembly2'
+
 
 import formchecklist from '@/components/nav-menu/advanced/formchecklist'
 import verificationcode from '@/components/nav-menu/advanced/verificationcode'
@@ -24,6 +22,7 @@ import changedatestructure from '@/components/nav-menu/advanced/changedatestruct
 import newobject from '@/components/nav-menu/advanced/newobject'
 import test from '@/components/nav-menu/advanced/test'
 
+
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -33,31 +32,7 @@ export default new Router({
       component: homepage,
       redirect: 'datalist',
       children: [
-        {
-          path: '/datalist',
-          name: 'datalist',
-          component: datalist
-        },
-        {
-          path: '/dialog',
-          name: 'dialog',
-          component: dialog
-        },
-        {
-          path: '/templateform',
-          name: 'templateform',
-          component: templateform
-        },
-        {
-          path: '/formstyle',
-          name: 'formstyle',
-          component: formstyle
-        },
-        {
-          path: '/datapage',
-          name: 'datapage',
-          component: datapage
-        },
+        
         {
           path: '/mydatapage',
           name: 'mydatapage',
@@ -73,6 +48,12 @@ export default new Router({
           name: 'showimageassembly',
           component: showimageassembly
         },
+        {
+          path: '/showimageassembly2',
+          name: 'showimageassembly2',
+          component: showimageassembly2
+        },
+      
         {
           path: '/formchecklist',
           name: 'formchecklist',
@@ -123,11 +104,7 @@ export default new Router({
           name: 'test',
           component: test
         },
-        {
-          path: '/date',
-          name: 'date',
-          component: date
-        }
+       
       ]
     }
   ]

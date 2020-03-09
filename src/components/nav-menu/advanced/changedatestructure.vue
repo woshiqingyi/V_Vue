@@ -137,7 +137,6 @@ export default {
                 BindData[BindData.length-1].Type = Type
               }
             }
-                
           }
        }
        console.log('BindData2',BindData)

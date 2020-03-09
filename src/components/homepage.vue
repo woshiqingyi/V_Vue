@@ -51,41 +51,17 @@ export default {
           Name: "基础功能",
           Code: "01",
           Children: [
-            {
-              Name: "数据列表",
-              Code: "0101",
-              Url: "datalist"
-            },
-            {
-              Name: "对话框",
-              Code: "0102",
-              Url: "dialog"
-            },
-            {
-              Name: "模板表单",
-              Code: "0103",
-              Url: "templateform"
-            },
-            {
-              Name: "表单风格",
-              Code: "0104",
-              Url: "formstyle"
-            },
-            {
-              Name: "数据分页",
-              Code: "0105",
-              Url: "datapage"
-            },
+           
             {
               Name: "自定义数据分页",
               Code: "0106",
               Url: "mydatapage"
             },
-            {
-              Name: "日期",
-              Code: "0107",
-              Url: "date"
-            },
+            // {
+            //   Name: "日期",
+            //   Code: "0107",
+            //   Url: "date"
+            // },
             {
               Name: "无ID删数组数据",
               Code: "0108",
@@ -95,6 +71,11 @@ export default {
               Name: "图片组件",
               Code: "0109",
               Url: "showimageassembly"
+            },
+            {
+              Name: "研究组件",
+              Code: "0110",
+              Url: "showimageassembly2"
             },
 
           ]

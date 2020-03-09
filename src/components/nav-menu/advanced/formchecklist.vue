@@ -16,9 +16,7 @@
       <el-table-column prop="name" label="姓名" width="180"></el-table-column>
       <el-table-column prop="address" label="地址"></el-table-column>
     </el-table>
-
     <el-button @click="onTo" style="margin-top:10px;">下一步</el-button>
-
     <div class="v-menu-title">多选列表输入框</div>
     <div class="v-line-style"></div>
 

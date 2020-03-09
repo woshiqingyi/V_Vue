@@ -33,7 +33,7 @@ components: { component1 },
             },
         }
     },
-   
+    
     methods:{
         zengjia(){
             this.word.push(

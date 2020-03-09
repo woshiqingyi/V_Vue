@@ -6,7 +6,17 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+
+  created(){
+    window.woshiqingyi = this.test10
+  },
+
+  methods:{
+    test10(){
+      console.log('10')
+    }
+  }
 }
 </script>
 
