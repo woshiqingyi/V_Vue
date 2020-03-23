@@ -22,6 +22,10 @@ import changedatestructure from '@/components/nav-menu/advanced/changedatestruct
 import newobject from '@/components/nav-menu/advanced/newobject'
 import test from '@/components/nav-menu/advanced/test'
 
+import center from '@/components/nav-menu/css/center'
+import vertical from '@/components/nav-menu/css/vertical'
+import verticalcenter from '@/components/nav-menu/css/verticalcenter'
+
 
 Vue.use(Router)
 export default new Router({
@@ -108,7 +112,22 @@ export default new Router({
           name: 'test',
           component: test
         },
-       
+        {
+          path: '/center',
+          name: 'center',
+          component: center
+        },
+        {
+          path: '/vertical',
+          name: 'vertical',
+          component: vertical
+        },
+        {
+          path: '/verticalcenter',
+          name: 'verticalcenter',
+          component: verticalcenter
+        },
+        
       ]
     }
   ]

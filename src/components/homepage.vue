@@ -38,7 +38,7 @@
       </el-menu>
     </el-card>
     <div class="per-menu-content">
-      <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
@@ -105,8 +105,7 @@ export default {
               Name: "研究组件",
               Code: "0110",
               Url: "showimageassembly2"
-            },
-
+            }
           ]
         },
         {
@@ -157,7 +156,28 @@ export default {
               Name: "对象",
               Code: "0215",
               Url: "newobject"
+            }
+          ]
+        },
+        {
+          Name: "CSS布局",
+          Code: "03",
+          Children: [
+            {
+              Name: "水平居中",
+              Code: "0301",
+              Url: "center"
             },
+            {
+              Name: "垂直居中",
+              Code: "0302",
+              Url: "vertical"
+            },
+            {
+              Name: "水平垂直居中",
+              Code: "0303",
+              Url: "verticalcenter"
+            }
           ]
         }
       ],
